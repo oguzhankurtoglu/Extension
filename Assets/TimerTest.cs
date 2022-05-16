@@ -10,7 +10,20 @@ public class TimerTest : MonoBehaviour
     {
         Delay.RunAfter(2f, () =>
         {
-            Debug.Log("START");
-        });
+            Debug.Log("started");
+        } );
+    }
+
+    private void Movement()
+    {
+        Delay.RunAfter(1f,()=> Debug.Log("moved"));
+    }
+
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Movement();
+        }
     }
 }
