@@ -1,10 +1,13 @@
-public class Collectible : CollectibleBase
+namespace Collectible
 {
-   public override void Collect(Collector collector)
+   public class Collectible : CollectibleBase
    {
-      base.Collect(collector);
+      public override void Collect(Collector collector)
+      {
+         base.Collect(collector);
       
-      // Increase coin or collectible count
-      Destroy(gameObject);
+         // Increase coin or collectible count
+         Destroy(gameObject);
+      }
    }
 }

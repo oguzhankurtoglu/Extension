@@ -1,16 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class CollectibleBase : MonoBehaviour,ICollectible
+namespace Collectible
 {
-    public CollectibleData data;
-    public virtual void Collect(Collector collector)
+    public abstract class CollectibleBase : MonoBehaviour,ICollectible
     {
-        if (data.particle!=null)
+        public CollectibleData data;
+        public virtual void Collect(Collector collector)
         {
-            var effect = Instantiate(data.particle, transform.position + Vector3.up, transform.rotation, transform);
-            effect.Play();
+            if (data.particle!=null)
+            {
+                var effect = Instantiate(data.particle, transform.position + Vector3.up, transform.rotation, transform);
+                effect.Play();
+            }
         }
     }
 }

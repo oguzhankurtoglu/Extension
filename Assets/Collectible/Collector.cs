@@ -1,10 +1,13 @@
 using UnityEngine;
 
-public class Collector : MonoBehaviour
+namespace Collectible
 {
-    private void OnTriggerEnter(Collider other)
+    public class Collector : MonoBehaviour
     {
-        ICollectible collectible = other.GetComponent<ICollectible>();
-        collectible?.Collect(this);
+        private void OnTriggerEnter(Collider other)
+        {
+            ICollectible collectible = other.GetComponent<ICollectible>();
+            collectible?.Collect(this);
+        }
     }
 }
